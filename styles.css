@@ -1,0 +1,327 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  font-family: "Epilogue", sans-serif;
+}
+:root {
+  --almost-white: hsl(0, 0%, 98%);
+  --medium-gray: hsl(0, 0%, 41%);
+  --almost-black: hsl(0, 0%, 8%);
+}
+body {
+  position: relative;
+  font-size: 1.8rem;
+  min-height: 100vh;
+  background-color: var(--almost-white);
+}
+.overlay {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+main {
+  overflow: hidden;
+}
+/*Header and menu*/
+.header {
+  background-color: var(--almost-white);
+  display: flex;
+  justify-content: space-between;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.header__menu-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 4rem;
+  height: 4rem;
+}
+.header__menu-icon > div {
+  width: 100%;
+  height: 0.3rem;
+  background-color: black;
+}
+.header__menu {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  width: 20rem;
+  padding: 2rem;
+  transition: all 200ms;
+  position: fixed;
+  right: -20rem;
+  top: 0;
+  min-height: 100vh;
+  background-color: var(--almost-white);
+}
+.header__menu-cross {
+  margin-left: auto;
+}
+.header__menu nav > ul > li {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.header__menu-features li,
+.header__menu-company li {
+  margin-left: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.header__menu ul {
+  list-style: none;
+}
+.header__menu a {
+  color: var(--medium-gray);
+  text-decoration: none;
+}
+.header__btn {
+  cursor: pointer;
+  background-color: var(--almost-white);
+  border: none;
+  color: var(--medium-gray);
+  font-family: "Epilogue", sans-serif;
+  font-weight: 600;
+  padding: 1rem;
+}
+.btn--register {
+  border: 0.2rem solid var(--medium-gray);
+  border-radius: 1rem;
+}
+/*End of Header and menu*/
+
+/*Main content*/
+.container {
+  display: flex;
+  flex-direction: column;
+}
+.container__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 4rem;
+}
+.container__text > * {
+  margin-bottom: 2rem;
+}
+.container h1 {
+  font-size: 3.6rem;
+}
+.container p {
+  color: var(--medium-gray);
+  font-size: 1.6rem;
+  line-height: 2.5rem;
+}
+.container button {
+  border: 1px solid var(--almost-black);
+  background-color: var(--almost-black);
+  color: var(--almost-white);
+  padding: 1.5rem 2rem;
+  border-radius: 1.5rem;
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+.container__clients {
+  margin-top: 4rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  list-style: none;
+}
+.container__clients img {
+  width: 6rem;
+}
+.container__hero {
+  width: 100%;
+}
+.container__hero img {
+  width: 100%;
+}
+/*End of Main content*/
+
+@media (min-width: 768px) {
+  .header__menu-icon {
+    display: none;
+  }
+  .header__menu-cross {
+    display: none;
+  }
+  .header__menu {
+    position: initial;
+    flex: 1;
+    align-items: center;
+    padding: 1rem;
+    width: fit-content;
+    background-color: var(--almost-white);
+    flex-direction: row;
+    min-height: 0;
+  }
+  .header__menu nav > ul {
+    display: flex;
+  }
+  .header__menu li {
+    margin-right: 1rem;
+    margin-left: 1rem;
+  }
+  .header__menu nav {
+    margin-right: auto;
+  }
+  .header__btn {
+    padding: 0;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    height: 3rem;
+  }
+  .header__menu-features {
+    position: absolute;
+    top: 5rem;
+    left: 7rem;
+    background-color: white;
+    box-shadow: 0px 1px 20px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 1rem;
+  }
+  .header__menu-company {
+    position: absolute;
+    top: 5rem;
+    left: 22rem;
+    background-color: white;
+    box-shadow: 0px 1px 10px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 1rem;
+  }
+  .container p {
+    max-width: 50rem;
+  }
+  .container__clients {
+    max-width: 50rem;
+    justify-content: space-between;
+  }
+}
+@media screen and (min-width: 1024px) {
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  main {
+    display: flex;
+    flex: 1;
+    align-items: center;
+  }
+  .container {
+    flex-direction: row-reverse;
+    justify-content: center;
+    width: 100%;
+  }
+  .container__text {
+    max-width: 40%;
+    align-items: flex-start;
+    text-align: start;
+    padding: 0;
+    padding-right: 2rem;
+  }
+  .container__text > * {
+    margin-bottom: 4rem;
+  }
+  .container h1 {
+    font-size: 5.8rem;
+  }
+  .container p {
+    max-width: 40rem;
+  }
+  .container__text button:hover {
+    cursor: pointer;
+    transition: all 200ms;
+    color: var(--almost-black);
+    background-color: var(--almost-white);
+  }
+  .header__menu nav ul li > a:hover {
+    transition: all 200ms;
+    color: var(--almost-black);
+  }
+  .header__btn:hover {
+    transition: all 200ms;
+    color: var(--almost-black);
+  }
+  .btn--register:hover {
+    border: 0.2rem solid var(--almost-black);
+  }
+  .container__clients {
+    margin-bottom: 0;
+    margin-top: auto;
+  }
+  .container__hero {
+    max-width: 35%;
+  }
+  .header__menu nav > ul {
+    margin-left: 4rem;
+  }
+  .header__menu-company {
+    left: 26rem;
+  }
+  .header__menu-features {
+    left: 11rem;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .header {
+    padding: 0 4rem;
+  }
+  .container__hero {
+    max-width: 35%;
+  }
+  .container h1 {
+    font-size: 7.2rem;
+  }
+  .container__text {
+    padding-top: 5rem;
+    margin-right: 10rem;
+  }
+  .header__menu-company {
+    padding: 1rem;
+    left: 29rem;
+  }
+  .header__menu-features {
+    padding: 1rem;
+    left: 12rem;
+  }
+}
+@media screen and (min-width: 1920px) {
+  html {
+    font-size: 75%;
+  }
+  .container__text {
+    margin-right: 10rem;
+  }
+  .container {
+    padding-bottom: 5rem;
+  }
+  .container__hero {
+    max-width: 30%;
+  }
+  .header__menu-company {
+    left: 27rem;
+  }
+  .header__menu-features {
+    left: 10rem;
+  }
+}
+/*States*/
+.unfocused {
+  position: absolute;
+}
+.menu-showing {
+  right: 0;
+}
+.hidden {
+  display: none;
+}

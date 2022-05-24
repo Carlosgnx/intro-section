@@ -1,39 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap" rel="stylesheet">
   <title>Frontend Mentor | Intro section with dropdown navigation</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
+
+
 <body>
-
-  Features
-  Company
-  Careers
-  About
-
-  Login
-  Register
-
-  Make remote work
-
-  Get your team in sync, no matter your location. Streamline processes, 
-  create team rituals, and watch productivity soar.
-
-  Learn more
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+  <div class="overlay"></div>
+  <header class="header">
+    <img src="./images/logo.svg" alt="" class="header__logo">
+    <div onclick="alternator('header__menu', 'menu-showing', '', '', 'unfocused', 'overlay')" class="header__menu-icon">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="header__menu">
+      <div onclick="alternator('header__menu', 'menu-showing', '', '', 'unfocused', 'overlay')"
+        class="header__menu-cross">
+        <img src="./images/icon-close-menu.svg" alt="">
+      </div>
+      <nav>
+        <ul>
+          <li>
+            <a onclick="alternator('header__menu-features', 'hidden', 'header__menu-features-arrowdown', 'header__menu-features-arrowup', 'hidden')"
+              href="#">Features
+              <img src="/images/icon-arrow-up.svg" alt="" class="header__menu-features-arrowup hidden">
+              <img src="/images/icon-arrow-down.svg" alt="" class="header__menu-features-arrowdown">
+            </a>
+          </li>
+          <li class="header__menu-features hidden">
+            <ul>
+              <li><a href="#">
+                  <img src="./images/icon-todo.svg" alt="">
+                  Todo List</a></li>
+              <li><a href="#">
+                  <img src="./images/icon-calendar.svg" alt=""> Calendar</a></li>
+              <li><a href="#">
+                  <img src="./images/icon-reminders.svg" alt="">
+                  Reminders</a></li>
+              <li><a href="#">
+                  <img src="./images/icon-planning.svg" alt="">
+                  Planning</a></li>
+            </ul>
+          </li>
+          <li><a
+              onclick="alternator('header__menu-company', 'hidden', 'header__menu-company-arrowdown', 'header__menu-company-arrowup', 'hidden')"
+              href="#">Company
+              <img src="./images/icon-arrow-up.svg" alt="" class="header__menu-company-arrowup hidden">
+              <img src="./images/icon-arrow-down.svg" alt="" class="header__menu-company-arrowdown">
+            </a>
+          </li>
+          <li class="header__menu-company hidden">
+            <ul>
+              <li><a href="#">History</a></li>
+              <li><a href="#">Our Team</a></li>
+              <li><a href="#">Blog</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+      </nav>
+      <button type="button" class="header__btn btn--login">Login</button>
+      <button type="button" class="header__btn btn--register">Register</button>
+    </div>
+  </header>
+  <main>
+    <section class="container">
+      <picture class="container__hero">
+        <source media="(min-width: 1024px)" srcset="./images/image-hero-desktop.png">
+        <img src="./images/image-hero-mobile.png" alt="">
+      </picture>
+      <div class="container__text">
+        <h1>Make remote work</h1>
+        <p>
+          Get your team in sync, no matter your location. Streamline processes,
+          create team rituals, and watch productivity soar.
+        </p>
+        <button type="button">Learn more</button>
+        <ul class="container__clients">
+          <li><img src="./images/client-databiz.svg" alt=""></li>
+          <li><img src="./images/client-audiophile.svg" alt=""></li>
+          <li><img src="./images/client-meet.svg" alt=""></li>
+          <li><img src="./images/client-maker.svg" alt=""></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+  <script src="main.js"></script>
 </body>
+
 </html>
