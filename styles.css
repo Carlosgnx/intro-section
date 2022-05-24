@@ -150,7 +150,7 @@ main {
 }
 /*End of Main content*/
 
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .header__menu-icon {
     display: none;
   }
